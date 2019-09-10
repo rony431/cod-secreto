@@ -5,9 +5,9 @@ app.get('', (req, res) => {
   for(var i = 1; i<=50; i++){
     console.log(i)
     if (i % 2 == 0){
-      res.write('<p> '+i+'Hola Soy Par!</p>');
+      res.write('<p> '+i+'Soy Par!</p>');
     }else{
-      res.write('<p> '+i+'Hola Soy Impar!</p>');
+      res.write('<p> '+i+'Soy Impar!</p>');
     }
 
   }
