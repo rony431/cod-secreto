@@ -8,7 +8,7 @@ app.get('', (req, res) => {
 app.use(express.urlencoded())
 app.post('', (req, res) => {
   const result = req.body.username
-  res.send('Hola '+result+'!')
+  res.send('<h1>Hola '+result+'!</h1>')
   res.end()
 })
 
