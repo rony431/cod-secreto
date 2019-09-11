@@ -1,15 +1,11 @@
-const express = require('express')
-const app = express()
-
-app.get('', (req, res) => {
-  var str = '<form method="POST" action=""><input type="text" name="username" /><input type="submit" /><form>'
-  res.send(str)
+var express = require('express');
+var app = express();
+var useragent = require('express-useragent');
+ 
+app.use(useragent.express());
+app.get('/result', function(req, res){
+    res.send(req.useragent.browser);
 });
-app.use(express.urlencoded())
-app.post('', (req, res) => {
-  const result = req.body.username
-  res.send('<h1>Hola '+result+'!</h1>')
-  res.end()
-})
+
 
 app.listen(3000, () => console.log('Listening on port 3000!'));
